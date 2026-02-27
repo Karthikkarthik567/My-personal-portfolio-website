@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Karthik M | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f172a;
+    color: #f1f5f9;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    background: #111827;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: #f1f5f9;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* Header */
+header {
+    padding: 130px 20px 70px;
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 18px;
+}
+
+/* Container */
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* Section Title */
+h2 {
+    border-left: 5px solid #38bdf8;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #334155;
+}
+
+/* Skill Tags */
+.skill {
+    display: inline-block;
+    background: #334155;
+    padding: 8px 14px;
+    border-radius: 20px;
+    margin: 6px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #38bdf8;
+    border-radius: 6px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+.btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111827;
+    margin-top: 40px;
+    color: #94a3b8;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:768px) {
+    header h1 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header>
+    <h1>Karthik M</h1>
+    <p>Aspiring Software Developer | AI & ML Enthusiast</p>
+    <a href="Karthik_cv.pdf" download class="btn">Download Resume</a>
+</header>
+
+<div class="container">
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am a Computer Science student with internship experience and strong programming fundamentals.
+            I enjoy solving real-world problems using Artificial Intelligence and backend development.
+        </p>
+        <p>
+            My goal is to build scalable, efficient, and intelligent software solutions that create real impact.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="card">
+        <span class="skill">Java</span>
+        <span class="skill">Python</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">YOLOv8</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">OpenCV</span>
+        <span class="skill">DBMS</span>
+    </div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="card">
+    <h3>Cataract Detection using YOLOv8</h3>
+    <p>
+        Built an AI-based object detection system to identify cataracts from medical eye images using YOLOv8.
+        The dataset was preprocessed with resizing, normalization, and augmentation techniques to improve model performance.
+    </p>
+    <p>
+        Trained and evaluated the model to enhance early-stage diagnosis reliability and improve detection accuracy.
+    </p>
+    <p><strong>Technologies:</strong> Python, YOLOv8, OpenCV, Deep Learning</p>
+    <a href="https://github.com/Karthikkarthik567" target="_blank" class="btn">View Code</a>
+</div>
+
+<div class="card">
+    <h3>Tongue Dysplasia Detection</h3>
+    <p>
+        Developed a machine learning-based medical image classification system for early detection of tongue dysplasia.
+        Performed data preprocessing, feature extraction, and model training for abnormal tissue classification.
+    </p>
+    <p>
+        The system assists medical analysis by providing AI-supported diagnostic insights.
+    </p>
+    <p><strong>Technologies:</strong> Python, Machine Learning, Image Processing</p>
+    <a href="https://github.com/Karthikkarthik567" target="_blank" class="btn">View Code</a>
+</div>
+
+<div class="card">
+    <h3>College Administration Management System</h3>
+    <p>
+        Created a role-based web application to manage student records from 1st to 4th year.
+        Implemented modules for admissions, timetable management, and examination tracking.
+    </p>
+    <p>
+        Designed secure access control for Admin, Faculty, and Students with backend database integration.
+    </p>
+    <p><strong>Technologies:</strong> Java/PHP, MySQL, DBMS</p>
+    <a href="https://github.com/Karthikkarthik567" target="_blank" class="btn">View Code</a>
+</div>
+
+</section>
+
+<section id="experience">
+    <h2>Internship Experience</h2>
+    <div class="card">
+        <h3>I-Triangle Infotech – Tracking Device Tester (May–Nov 2023)</h3>
+        <p>
+            Conducted functional testing of GPS tracking devices including GSM/4G communication, 
+            location accuracy validation, and power optimization testing.
+        </p>
+        <p>
+            Verified integration with cloud dashboard systems and ensured device reliability under real-world conditions.
+        </p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        Email: <a href="mailto:mkarthik1784@gmail.com">mkarthik1784@gmail.com</a><br><br>
+        GitHub: <a href="https://github.com/Karthikkarthik567" target="_blank">github.com/Karthikkarthik567</a>
+    </div>
+</section>
+
+</div>
+
+<footer>
+    © 2026 Karthik M | Built with HTML & CSS
+</footer>
+
+</body>
+</html>
