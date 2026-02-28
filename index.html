@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karthik M | Portfolio</title>
+<title>Karthik M | Software Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 *{
     margin:0;
@@ -15,56 +16,39 @@
     font-family:'Inter',sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
-    background: linear-gradient(-45deg, #0f172a, #111827, #0b1120, #1e293b);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background:#0b1120;
     color:#e2e8f0;
     overflow-x:hidden;
 }
 
-@keyframes gradientBG {
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
+/* ---------- Animated Mesh Background ---------- */
 
-/* Floating Background Orbs */
-body::before,
-body::after{
-    content:"";
+.background{
     position:fixed;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:0.25;
-    z-index:-1;
+    width:100%;
+    height:100%;
+    z-index:-2;
+    background: radial-gradient(circle at 20% 20%, #38bdf8 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, #9333ea 0%, transparent 40%);
+    animation: moveBG 10s infinite alternate ease-in-out;
 }
 
-body::before{
-    background:#38bdf8;
-    top:-150px;
-    left:-150px;
+@keyframes moveBG{
+    0%{ transform: translate(0,0); }
+    100%{ transform: translate(-40px,-40px); }
 }
 
-body::after{
-    background:#9333ea;
-    bottom:-150px;
-    right:-150px;
-}
+/* ---------- Navbar ---------- */
 
-/* NAVIGATION */
 nav{
     position:fixed;
     width:100%;
+    padding:18px 0;
     background:rgba(15,23,42,0.7);
-    backdrop-filter:blur(15px);
-    padding:20px 0;
+    backdrop-filter:blur(18px);
     text-align:center;
     z-index:1000;
     border-bottom:1px solid rgba(255,255,255,0.08);
@@ -72,150 +56,184 @@ nav{
 
 nav a{
     color:#cbd5e1;
-    margin:0 25px;
+    margin:0 22px;
     text-decoration:none;
     font-weight:500;
     transition:0.3s;
-    letter-spacing:0.5px;
 }
 
 nav a:hover{
     color:#38bdf8;
 }
 
-/* HEADER */
+/* ---------- Hero ---------- */
+
 header{
-    padding:180px 20px 120px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
+    padding:0 20px;
 }
 
 header h1{
-    font-size:52px;
+    font-size:58px;
     font-weight:700;
-    background: linear-gradient(90deg,#38bdf8,#9333ea);
+    background:linear-gradient(90deg,#38bdf8,#9333ea);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    margin-bottom:15px;
 }
 
 header p{
-    color:#cbd5e1;
+    margin-top:20px;
     font-size:22px;
-    margin-bottom:35px;
+    color:#94a3b8;
+    max-width:700px;
 }
 
-/* BUTTON */
+.hero-buttons{
+    margin-top:40px;
+}
+
 .btn{
     display:inline-block;
     padding:14px 30px;
-    background:linear-gradient(90deg,#38bdf8,#9333ea);
-    color:white;
-    font-weight:600;
+    margin:10px;
     border-radius:10px;
     text-decoration:none;
+    font-weight:600;
     transition:0.3s;
-    box-shadow:0 15px 35px rgba(56,189,248,0.3);
 }
 
-.btn:hover{
+.primary{
+    background:linear-gradient(90deg,#38bdf8,#9333ea);
+    color:white;
+}
+
+.primary:hover{
     transform:translateY(-4px) scale(1.05);
-    box-shadow:0 20px 45px rgba(147,51,234,0.4);
 }
 
-/* CONTAINER */
-.container{
-    width:85%;
-    max-width:1100px;
-    margin:auto;
-    padding:80px 0;
+.secondary{
+    border:1px solid #38bdf8;
+    color:#38bdf8;
 }
 
-/* SECTION TITLES */
-h2{
-    font-size:28px;
+.secondary:hover{
+    background:#38bdf8;
+    color:#0b1120;
+}
+
+/* ---------- Sections ---------- */
+
+.section{
+    padding:100px 10%;
+}
+
+.section h2{
+    font-size:32px;
     margin-bottom:40px;
     position:relative;
-    display:inline-block;
 }
 
-h2::after{
+.section h2::after{
     content:"";
     position:absolute;
     left:0;
     bottom:-10px;
-    width:70%;
+    width:80px;
     height:4px;
     background:linear-gradient(90deg,#38bdf8,#9333ea);
     border-radius:10px;
 }
 
-/* CARD DESIGN */
+/* ---------- Cards ---------- */
+
 .card{
-    background:rgba(30,41,59,0.5);
-    backdrop-filter:blur(20px);
-    padding:35px;
-    border-radius:20px;
-    margin-bottom:35px;
+    background:rgba(30,41,59,0.6);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:18px;
     border:1px solid rgba(255,255,255,0.08);
     transition:0.4s;
-    transform:translateY(20px);
-    opacity:0;
-    animation:fadeUp 0.8s ease forwards;
+    position:relative;
+    overflow:hidden;
 }
 
 .card:hover{
     transform:translateY(-8px);
     border-color:#38bdf8;
 }
-
-@keyframes fadeUp{
-    to{
-        transform:translateY(0);
-        opacity:1;
-    }
+    .card{
+    position:relative;
+    overflow:hidden;
+}
+    .card::before{
+    content:"";
+    position:absolute;
+    width:150%;
+    height:150%;
+    background:linear-gradient(45deg, transparent, rgba(56,189,248,0.1), transparent);
+    top:-50%;
+    left:-50%;
+    transform:rotate(25deg);
+    transition:0.5s;
 }
 
-/* SKILLS */
+
+
+/* ---------- Skills ---------- */
+
 .skill{
     display:inline-block;
-    background:rgba(255,255,255,0.05);
     padding:10px 18px;
-    border-radius:30px;
     margin:8px;
-    font-size:14px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.05);
     transition:0.3s;
 }
 
 .skill:hover{
     background:linear-gradient(90deg,#38bdf8,#9333ea);
-    color:white;
 }
 
-/* LINKS */
-a{
-    color:#38bdf8;
+/* ---------- Project Grid ---------- */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
-/* FOOTER */
+/* ---------- Scroll Reveal ---------- */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ---------- Footer ---------- */
+
 footer{
     text-align:center;
     padding:40px;
-    background:rgba(15,23,42,0.6);
-    backdrop-filter:blur(10px);
-    color:#94a3b8;
-    border-top:1px solid rgba(255,255,255,0.08);
+    background:#0f172a;
     margin-top:80px;
+    color:#94a3b8;
 }
 
-/* RESPONSIVE */
+/* ---------- Responsive ---------- */
+
 @media(max-width:768px){
-    header h1{
-        font-size:36px;
-    }
-    nav a{
-        margin:0 12px;
-        font-size:14px;
-    }
+    header h1{ font-size:40px; }
 }
 
 </style>
@@ -223,54 +241,51 @@ footer{
 
 <body>
 
+<div class="background"></div>
+
 <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <header>
-    <h1>Karthik M</h1>
-    <p>Aspiring Software Developer | AI & ML Enthusiast</p>
-    <a href="Karthik_cv.pdf" download class="btn">Download Resume</a>
+    <h1>Hi, I'm Karthik</h1>
+    <p>I build intelligent AI systems and scalable backend applications that solve real-world problems.</p>
+
+    <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="Karthik_cv.pdf" download class="btn secondary">Download Resume</a>
+    </div>
 </header>
 
-<div class="container">
-
-<section id="about">
+<section id="about" class="section reveal">
     <h2>About Me</h2>
     <div class="card">
-        <p>
-            I am a Computer Science student with internship experience and strong programming fundamentals.
-            I enjoy solving real-world problems using Artificial Intelligence and backend development.
-        </p>
-        <p>
-            My goal is to build scalable, efficient, and intelligent software solutions that create real impact.
-        </p>
+        <p>Computer Science student with strong fundamentals in programming and AI-driven development.
+        Passionate about building scalable, intelligent systems that create impact.</p>
     </div>
 </section>
 
-<section id="skills">
+<section id="skills" class="section reveal">
     <h2>Technical Skills</h2>
     <div class="card">
         <span class="skill">Java</span>
         <span class="skill">Python</span>
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
         <span class="skill">MySQL</span>
-        <span class="skill">YOLOv8</span>
         <span class="skill">Machine Learning</span>
         <span class="skill">OpenCV</span>
-        <span class="skill">DBMS</span>
+        <span class="skill">YOLOv8</span>
     </div>
 </section>
 
-<section id="projects">
-<h2>Projects</h2>
+<section id="projects" class="section reveal">
+    <h2>Projects</h2>
 
-<div class="card">
+    <div class="projects-grid">
+    
+        <div class="card">
     <h3>Cataract Detection using YOLOv8</h3>
     <p>
         Built an AI-based object detection system to identify cataracts from medical eye images using YOLOv8.
@@ -280,7 +295,9 @@ footer{
         Trained and evaluated the model to enhance early-stage diagnosis reliability and improve detection accuracy.
     </p>
     <p><strong>Technologies:</strong> Python, YOLOv8, OpenCV, Deep Learning</p>
-    <a href="https://github.com/Karthikkarthik567" target="_blank" class="btn">View Code</a>
+    <a href="https://github.com/Karthikkarthik567" target="_blank" class="btn secondary">
+    View Code
+</a>
 </div>
 
 <div class="card">
@@ -306,10 +323,10 @@ footer{
     </p>
     <p><strong>Technologies:</strong> Java/PHP, MySQL, DBMS</p>
 </div>
-
+ </div>
 </section>
 
-<section id="experience">
+<section id="experience" class="section reveal">
     <h2>Internship Experience</h2>
     <div class="card">
         <h3>I-Triangle Infotech – Tracking Device Tester (May–Nov 2023)</h3>
@@ -323,20 +340,36 @@ footer{
     </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="section reveal">
     <h2>Contact</h2>
     <div class="card">
-        Email: <a href="mailto:mkarthik1784@gmail.com">mkarthik1784@gmail.com</a><br><br>
-        GitHub: <a href="https://github.com/Karthikkarthik567" target="_blank">github.com/Karthikkarthik567</a>
+        Email: mkarthik1784@gmail.com <br><br>
+      GitHub: <a href="https://github.com/Karthikkarthik567" target="_blank">github.com/Karthikkarthik567</a>
     </div>
 </section>
 
-</div>
-
 <footer>
-    © 2026 Karthik M | Built with HTML & CSS
+    © 2026 Karthik M | Premium Portfolio
 </footer>
+
+<script>
+
+/* Scroll Reveal */
+window.addEventListener('scroll', function(){
+    const reveals = document.querySelectorAll('.reveal');
+
+    reveals.forEach(reveal=>{
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if(revealTop < windowHeight - revealPoint){
+            reveal.classList.add('active');
+        }
+    });
+});
+
+</script>
 
 </body>
 </html>
-
